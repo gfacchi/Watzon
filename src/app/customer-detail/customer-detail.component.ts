@@ -1,4 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { Customer } from '../customer';
+import { City } from '../city';
+import { CustomerService } from '../customer.service';
+import { ActivatedRoute} from '@angular/router';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-customer-detail',
@@ -7,9 +12,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CustomerDetailComponent implements OnInit {
 
-  constructor() { }
+  @Input() customer: Customer;
+
+  constructor(
+    private route: ActivatedRoute,
+    private customerService: CustomerService,
+    private location: Location
+  ) { }
 
   ngOnInit() {
+    this.getCustomer();
   }
 
+  getCustomer() {
+    const id = +this.route.snapshot.paramMap.get('id');
+    this.customerService.getCustomer(id)
+    .subscribe(customer => this.customer = customer);
+  }
 }

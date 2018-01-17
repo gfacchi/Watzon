@@ -1,3 +1,9 @@
-<p>
-  customer-detail works!
-</p>
+<div *ngIf="customer">
+  <h2>{{customer.name | uppercase}} DETAILS</h2>
+  <div>
+    <h4>Id:</h4>
+    {{customer.id}}
+    <h4>Name:</h4>
+    {{customer.name}}
+  </div>
+</div>
