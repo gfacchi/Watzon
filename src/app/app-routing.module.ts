@@ -6,8 +6,8 @@ import { CustomerDetailComponent } from './customer-detail/customer-detail.compo
 
 const routes: Routes = [
   {path: 'customers', component: CustomersComponent},
-  {path: 'detail/:id', component: CustomerDetailComponent},
-  {path: '', component: CustomersComponent}
+  {path: 'customers/:id', component: CustomerDetailComponent},
+  {path: '', redirectTo: '/customers', pathMatch: 'full'}
 ];
 
 @NgModule({

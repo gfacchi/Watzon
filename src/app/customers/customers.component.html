@@ -1,11 +1,12 @@
 <h2>Customers</h2>
 <ul class="list-group">
   <li class="list-group-item" *ngFor="let customer of customers">
-    <button class="btn btn-primary" title="View notes" (click) = "showNotes(customer)" >-></button>
+    <button class="btn btn-primary" title="View notes" (click) = "showNotes(customer)" ><span class="glyphicon glyphicon-circle-arrow-right"></span></button>
     <a routerLink="/customers/{{customer.id}}">
       <span class="badge badge-default">{{customer.name}}</span>
       <span class="badge badge-default">{{customer.website}}</span>
       <span class="badge badge-default">{{customer.city}}</span>
     </a>
+    <button class="btn btn-primary" title="View notes" (click) = "showDetails(customer)" ><span class="glyphicon glyphicon-plus"></span></button>
   </li>
 </ul>
