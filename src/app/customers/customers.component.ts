@@ -7,6 +7,7 @@ import { CustomerService } from '../customer.service';
   templateUrl: './customers.component.html',
   styleUrls: ['./customers.component.css']
 })
+
 export class CustomersComponent implements OnInit {
 
   customers: Customer[];
