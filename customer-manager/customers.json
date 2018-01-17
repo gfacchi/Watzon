@@ -1,0 +1,58 @@
+{
+  "customers": [
+  {
+    "id": 1,
+    "name": "Carlo",
+    "street": "prova",
+    "city": "Bergamo",
+    "note": "prova",
+    "website": "www.prova.it",
+    "code": "PROVA123",
+    "contacts": [
+      {
+        "id": 1,
+        "name": "Luigi",
+        "surname": "a",
+        "birthdate": "23/09/1998",
+        "email": "a@a.a",
+        "role": "prova"
+      },
+      {
+        "id": 2,
+        "name": "Luigi",
+        "surname": "a",
+        "birthdate": "23/09/1998",
+        "email": "a@a.a",
+        "role": "prova"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Js",
+    "street": "prova",
+    "city": "Bergamo",
+    "note": "prova",
+    "website": "www.prova.it",
+    "code": "PROVA123",
+    "contacts": [
+      {
+        "id": 1,
+        "name": "asd",
+        "surname": "a",
+        "birthdate": "23/09/1998",
+        "email": "a@a.a",
+        "role": "prova"
+      },
+      {
+        "id": 2,
+        "name": "Ludagi",
+        "surname": "a",
+        "birthdate": "23/09/1998",
+        "email": "a@a.a",
+        "role": "prova"
+      }
+    ]
+  }
+]
+}
