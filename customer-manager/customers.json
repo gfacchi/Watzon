@@ -25,6 +25,22 @@
         "email": "a@a.a",
         "role": "prova"
       }
+    ],
+    "products": [
+      {
+        "id": 1,
+        "code": "abcde",
+        "name": "product1",
+        "description": "provap1"
+
+      },
+      {
+        "id": 2,
+        "code": "zxywv",
+        "name": "product2",
+        "description": "provap2"
+
+      }
     ]
   },
   {
@@ -51,6 +67,22 @@
         "birthdate": "23/09/1998",
         "email": "a@a.a",
         "role": "prova"
+      }
+    ],
+    "products": [
+      {
+        "id": 1,
+        "code": "abcde",
+        "name": "product1",
+        "description": "provap1"
+
+      },
+      {
+        "id": 2,
+        "code": "zxywv",
+        "name": "product2",
+        "description": "provap2"
+
       }
     ]
   }
