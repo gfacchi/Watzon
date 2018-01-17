@@ -1,4 +1,5 @@
 import { City } from './city';
+import { Contact } from './contact';
 
 export class Customer {
   id: number;
@@ -8,4 +9,5 @@ export class Customer {
   note: string;
   website: string;
   code: string;
+  contacts: Contact[];
 }
