@@ -11,7 +11,6 @@ import { AppRoutingModule } from './app-routing.module';
 
 import { HttpModule } from '@angular/http';
 import { ProductsComponent } from './products/products.component';
-import { ContactService } from './contact.service';
 import { CustomerSearchComponent } from './customer-search/customer-search.component';
 
 @NgModule({
@@ -28,7 +27,7 @@ import { CustomerSearchComponent } from './customer-search/customer-search.compo
     AppRoutingModule,
     HttpModule
   ],
-  providers: [CustomerService, ContactService],
+  providers: [CustomerService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

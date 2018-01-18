@@ -29,11 +29,4 @@ export class CustomersComponent implements OnInit, DoCheck {
       this.customers = this.customerService.sharedCustomers;
     }
   }
-
-
-  showNotes(customer: Customer): void {
-    if (customer !== null) {
-      this.show = true;
-    }
-  }
 }
