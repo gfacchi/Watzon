@@ -4,6 +4,7 @@ import { City } from '../city';
 import { CustomerService } from '../customer.service';
 import { ActivatedRoute} from '@angular/router';
 import { Location } from '@angular/common';
+import { Contact } from '../contact';
 
 @Component({
   selector: 'app-customer-detail',
