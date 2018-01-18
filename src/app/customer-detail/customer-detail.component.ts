@@ -4,6 +4,7 @@ import { City } from '../city';
 import { CustomerService } from '../customer.service';
 import { ActivatedRoute} from '@angular/router';
 import { Location } from '@angular/common';
+import { Contact } from '../contact';
 
 @Component({
   selector: 'app-customer-detail',
@@ -28,5 +29,9 @@ export class CustomerDetailComponent implements OnInit {
     const id = +this.route.snapshot.paramMap.get('id');
     this.customerService.getCustomer(id)
     .subscribe(customer => this.customer = customer);
+  }
+
+  goBack(): void {
+    this.location.back();
   }
 }
