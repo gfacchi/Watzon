@@ -10,12 +10,14 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 
 import { HttpModule } from '@angular/http';
+import { ProductsComponent } from './products/products.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CustomersComponent,
-    CustomerDetailComponent
+    CustomerDetailComponent,
+    ProductsComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,19 @@
+<div class="container">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col" class="text-center">Code</th>
+        <th scope="col" class="text-center">Name</th>
+        <th scope="col" class="text-center">Description</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr *ngFor="let product of products">
+        <th scope="row" class="col-md-5 text-center">{{product.code}}</th>
+        <td class="col-md-3 text-center">{{product.name}}</td>
+        <td class="col-md-3 text-center">{{product.description}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
