@@ -6,7 +6,7 @@
     "street": "prova",
     "city": "Bergamo",
     "note": "prova",
-    "website": "www.prova.it",
+    "website": "http://www.prova.it",
     "code": "PROVA123",
     "contacts": [
       {
@@ -49,7 +49,7 @@
     "street": "prova",
     "city": "Bergamo",
     "note": "prova",
-    "website": "www.prova.it",
+    "website": "http://www.prova.it",
     "code": "PROVA123",
     "contacts": [
       {
