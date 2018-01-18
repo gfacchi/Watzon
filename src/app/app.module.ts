@@ -11,6 +11,7 @@ import { AppRoutingModule } from './app-routing.module';
 
 import { HttpModule } from '@angular/http';
 import { ProductsComponent } from './products/products.component';
+import { ContactService } from './contact.service';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,7 @@ import { ProductsComponent } from './products/products.component';
     AppRoutingModule,
     HttpModule
   ],
-  providers: [CustomerService],
+  providers: [CustomerService, ContactService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
