@@ -5,6 +5,7 @@ import { Response } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 import { Customer } from './customer';
 import 'rxjs/add/operator/toPromise';
+import { of } from 'rxjs/observable/of';
 
 @Injectable()
 export class CustomerService {
@@ -34,5 +35,13 @@ export class CustomerService {
   getCustomer(id: number): Observable<Customer> {
     const url = `${this.customersUrl}/${id}`;
     return this.httpClient.get<Customer>(url);
+  }
+
+  searchCustomers(term: string): Promise<Customer[]> {
+    if (!term.trim()) {
+      return;
+    }
+    return this.http.get(`${this.customersUrl}/search/searchlike?name=${term}`, {headers: CustomerService.getHeaders()})
+      .toPromise().then(response => response.json()._embedded.customers as Customer[]);
   }
 }

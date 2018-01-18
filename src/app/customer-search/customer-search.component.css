@@ -1,0 +1,9 @@
+#search-component{
+  margin-bottom: 2em;
+}
+
+li:hover {
+  background-color: cornflowerblue;
+  cursor: pointer;
+  color:white;
+}
