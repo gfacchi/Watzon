@@ -1,5 +1,6 @@
 export class City {
-  id: number;
   name: string;
-  cap: number;
+  zip: string;
+  province_state: string;
+  country: string;
 }
