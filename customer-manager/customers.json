@@ -1,90 +1,45 @@
 {
-  "customers": [
-  {
-    "id": 1,
-    "name": "Carlo",
-    "street": "prova",
-    "city": "Bergamo",
-    "note": "prova",
-    "website": "www.prova.it",
-    "code": "PROVA123",
-    "contacts": [
+  "_embedded": {
+    "customers": [
       {
-        "id": 1,
-        "name": "Luigi",
-        "surname": "a",
-        "birthdate": "23/09/1998",
-        "email": "a@a.a",
-        "role": "prova"
-      },
-      {
-        "id": 2,
-        "name": "Luigi",
-        "surname": "a",
-        "birthdate": "23/09/1998",
-        "email": "a@a.a",
-        "role": "prova"
-      }
-    ],
-    "products": [
-      {
-        "id": 1,
-        "code": "abcde",
-        "name": "product1",
-        "description": "provap1"
-
-      },
-      {
-        "id": 2,
-        "code": "zxywv",
-        "name": "product2",
-        "description": "provap2"
-
+        "name": "pippo",
+        "street": "via dei tasti",
+        "city": {
+          "name": "Altino",
+          "zip": "66040",
+          "province_state": "CH",
+          "country": "IT"
+        },
+        "note": "none",
+        "website": "www.google.it",
+        "taxCode": "20127",
+        "_links": {
+          "self": {
+            "href": "http://10.210.5.172:8080/customers/1"
+          },
+          "customer": {
+            "href": "http://10.210.5.172:8080/customers/1"
+          },
+          "products": {
+            "href": "http://10.210.5.172:8080/customers/1/products"
+          }
+        }
       }
     ]
   },
-  {
-    "id": 2,
-    "name": "Js",
-    "street": "prova",
-    "city": "Bergamo",
-    "note": "prova",
-    "website": "www.prova.it",
-    "code": "PROVA123",
-    "contacts": [
-      {
-        "id": 1,
-        "name": "asd",
-        "surname": "a",
-        "birthdate": "23/09/1998",
-        "email": "a@a.a",
-        "role": "prova"
-      },
-      {
-        "id": 2,
-        "name": "Ludagi",
-        "surname": "a",
-        "birthdate": "23/09/1998",
-        "email": "a@a.a",
-        "role": "prova"
-      }
-    ],
-    "products": [
-      {
-        "id": 1,
-        "code": "abcde",
-        "name": "product1",
-        "description": "provap1"
-
-      },
-      {
-        "id": 2,
-        "code": "zxywv",
-        "name": "product2",
-        "description": "provap2"
-
-      }
-    ]
+  "_links": {
+    "self": {
+      "href": "http://10.210.5.172:8080/customers{?page,size,sort}",
+      "templated": true
+    },
+    "profile": {
+      "href": "http://10.210.5.172:8080/customers"
+    }
+  },
+  "page": {
+    "size": 20,
+    "totalElements": 1,
+    "totalPages": 1,
+    "number": 0
   }
-]
 }
