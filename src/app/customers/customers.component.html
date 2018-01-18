@@ -19,9 +19,9 @@
         </td>
         <th scope="row" class="col-md-5 text-center" routerLink="/customers/{{customer.id}}">{{customer.name}}</th>
         <td class="col-md-3 text-center">
-          <a href="{{customer.website}}">{{customer.website}}</a>
+          <a href="{{customer.webSite}}">{{customer.webSite}}</a>
         </td>
-        <td class="col-md-3 text-center" routerLink="/customers/{{customer.id}}">{{customer.city}}</td>
+        <td class="col-md-3 text-center" routerLink="/customers/{{customer.id}}">{{customer.city.name}}</td>
       </tr>
 
     </tbody>
