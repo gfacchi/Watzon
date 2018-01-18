@@ -11,13 +11,15 @@ import { AppRoutingModule } from './app-routing.module';
 
 import { HttpModule } from '@angular/http';
 import { ProductsComponent } from './products/products.component';
+import { CustomerSearchComponent } from './customer-search/customer-search.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CustomersComponent,
     CustomerDetailComponent,
-    ProductsComponent
+    ProductsComponent,
+    CustomerSearchComponent
   ],
   imports: [
     BrowserModule,
