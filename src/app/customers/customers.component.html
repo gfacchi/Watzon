@@ -1,12 +1,29 @@
 <h2>Customers</h2>
-<ul class="list-group">
-  <li class="list-group-item" *ngFor="let customer of customers">
-    <button class="btn btn-primary" title="View notes" (click) = "showNotes(customer)" ><span class="glyphicon glyphicon-circle-arrow-right"></span></button>
-    <a routerLink="/customers/{{customer.id}}">
-      <span class="badge badge-default">{{customer.name}}</span>
-      <span class="badge badge-default">{{customer.website}}</span>
-      <span class="badge badge-default">{{customer.city}}</span>
-    </a>
-    <button class="btn btn-primary" title="View notes" (click) = "showDetails(customer)" ><span class="glyphicon glyphicon-plus"></span></button>
-  </li>
-</ul>
+<div class="container">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col" class="text-left">Notes</th>
+        <th scope="col" class="text-center">Name</th>
+        <th scope="col" class="text-center">Website</th>
+        <th scope="col" class="text-center">City</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr *ngFor="let customer of customers" class="router">
+        <td class="col-md-1">
+          <button class="btn btn-primary" title="View notes" (click)="showNotes(customer)">
+            <span class="glyphicon glyphicon-circle-arrow-right"></span>
+          </button>
+        </td>
+        <th scope="row" class="col-md-5 text-center" routerLink="/customers/{{customer.id}}">{{customer.name}}</th>
+        <td class="col-md-3 text-center">
+          <a href="{{customer.website}}">{{customer.website}}</a>
+        </td>
+        <td class="col-md-3 text-center" routerLink="/customers/{{customer.id}}">{{customer.city}}</td>
+      </tr>
+
+    </tbody>
+  </table>
+</div>
