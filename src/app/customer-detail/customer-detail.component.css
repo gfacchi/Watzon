@@ -17,6 +17,7 @@ h5 {
   border: none;
   border-radius: .28571429rem;
   box-shadow: 0 1px 3px 0 #d4d4d5, 0 0 0 1px #d4d4d5;
+  width: 90%;
 }
 
 .card-block {
@@ -118,6 +119,8 @@ h5 {
   border: 2px dashed grey;
   text-align: center;
 }
+
+
 
 .box > .icon { text-align: center; position: relative; }
 .box > .icon > .image { position: relative; z-index: 2; margin: auto; width: 88px; height: 88px; border: 8px solid white; line-height: 88px; border-radius: 50%; background: #63B76C; vertical-align: middle; }
