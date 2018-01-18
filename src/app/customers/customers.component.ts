@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Customer } from '..//customer';
 import { CustomerService } from '../customer.service';
+import { DoCheck } from '@angular/core/src/metadata/lifecycle_hooks';
 
 @Component({
   selector: 'app-customers',
@@ -8,9 +9,10 @@ import { CustomerService } from '../customer.service';
   styleUrls: ['./customers.component.css']
 })
 
-export class CustomersComponent implements OnInit {
+export class CustomersComponent implements OnInit, DoCheck {
 
   customers: Customer[];
+  private show: boolean;
 
   constructor(private customerService: CustomerService) { }
 
@@ -22,4 +24,16 @@ export class CustomersComponent implements OnInit {
     this.customerService.getCustomers().then(customers => this.customers = customers);
   }
 
+  ngDoCheck(): void {
+    if (this.customerService.sharedCustomers !== this.customers) {
+      this.customers = this.customerService.sharedCustomers;
+    }
+  }
+
+
+  showNotes(customer: Customer): void {
+    if (customer !== null) {
+      this.show = true;
+    }
+  }
 }

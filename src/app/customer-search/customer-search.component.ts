@@ -13,20 +13,12 @@ import { debounceTime, distinctUntilChanged, switchMap } from 'rxjs/operators';
 })
 export class CustomerSearchComponent implements OnInit {
 
-  customers$: Observable<Customer[]>;
-  private searchTerms = new Subject<string>();
-
   constructor(private customerService: CustomerService) { }
 
   search(term: string): void {
-    this.searchTerms.next(term);
+    this.customerService.searchCustomers(term);
   }
 
   ngOnInit() {
-    this.customers$ = this.searchTerms.pipe(
-      debounceTime(300),
-      distinctUntilChanged(),
-      switchMap((term: string) => this.customerService.searchCustomers(term))
-    );
   }
 }

@@ -2,10 +2,10 @@
   <label for="search-box">Customer:
   <input #searchBox id="search-box" (keyup)="search(searchBox.value)" />
   <ul class="list-group">
-    <li *ngFor="let customer of customers$ | async" class="list-group-item" routerLink="/customers/{{customer.id}}">
-        {{customer.name}}
-        <span class="badge">{{customer.city.name}}</span>
-    </li>
-  </ul>
+      <li *ngFor="let customer of customers$ | async" class="list-group-item" routerLink="/customers/{{customer.id}}">
+          {{customer.name}}
+          <span class="badge">{{customer.city.name}}</span>
+      </li>
+    </ul>
   </label>
 </div>

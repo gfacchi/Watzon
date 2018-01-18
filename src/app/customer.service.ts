@@ -18,6 +18,8 @@ export class CustomerService {
     // messageService
   ) { }
 
+  public sharedCustomers: Customer[];
+
   private static getHeaders() {
     const headers =  new Headers();
     headers.append('Content-Type', 'application/json');
@@ -27,7 +29,7 @@ export class CustomerService {
   getCustomers(): Promise<Customer[]> {
     return this.http.get(this.customersUrl, {headers: CustomerService.getHeaders()})
     .toPromise().then(response => {
-      console.log(response);
+      this.sharedCustomers = response.json()._embedded.customers as Customer[];
       return response.json()._embedded.customers as Customer[];
     });
   }
@@ -39,9 +41,12 @@ export class CustomerService {
 
   searchCustomers(term: string): Promise<Customer[]> {
     if (!term.trim()) {
-      return;
+      this.getCustomers();
     }
     return this.http.get(`${this.customersUrl}/search/searchlike?name=${term}`, {headers: CustomerService.getHeaders()})
-      .toPromise().then(response => response.json()._embedded.customers as Customer[]);
+      .toPromise().then(response => {
+        this.sharedCustomers = response.json()._embedded.customers as Customer[];
+        return response.json()._embedded.customers as Customer[];
+    });
   }
 }
