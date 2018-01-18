@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
   "_embedded": {
     "customers": [
       {
@@ -41,5 +42,93 @@
     "totalElements": 1,
     "totalPages": 1,
     "number": 0
+=======
+  "customers": [
+  {
+    "id": 1,
+    "name": "Carlo",
+    "street": "prova",
+    "city": "Bergamo",
+    "note": "prova",
+    "website": "http://www.prova.it",
+    "code": "PROVA123",
+    "contacts": [
+      {
+        "id": 1,
+        "name": "Luigi",
+        "surname": "Mario",
+        "birthdate": "23/09/1982",
+        "email": "a@a.a",
+        "role": "prova"
+      },
+      {
+        "id": 2,
+        "name": "Mario",
+        "surname": "Mario",
+        "birthdate": "23/09/1960",
+        "email": "a@a.a",
+        "role": "prova"
+      }
+    ],
+    "products": [
+      {
+        "id": 1,
+        "code": "abcde",
+        "name": "product1",
+        "description": "provap1"
+
+      },
+      {
+        "id": 2,
+        "code": "zxywv",
+        "name": "product2",
+        "description": "provap2"
+
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Js",
+    "street": "prova",
+    "city": "Bergamo",
+    "note": "prova",
+    "website": "http://www.prova.it",
+    "code": "PROVA123",
+    "contacts": [
+      {
+        "id": 1,
+        "name": "asd",
+        "surname": "a",
+        "birthdate": "23/09/1998",
+        "email": "a@a.a",
+        "role": "prova"
+      },
+      {
+        "id": 2,
+        "name": "Ludagi",
+        "surname": "a",
+        "birthdate": "23/09/1998",
+        "email": "a@a.a",
+        "role": "prova"
+      }
+    ],
+    "products": [
+      {
+        "id": 1,
+        "code": "abcde",
+        "name": "product1",
+        "description": "provap1"
+
+      },
+      {
+        "id": 2,
+        "code": "zxywv",
+        "name": "product2",
+        "description": "provap2"
+
+      }
+    ]
+>>>>>>> 35cbffe5bc480040d6e3b1c698e694fee7fcb4ec
   }
 }
