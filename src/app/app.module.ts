@@ -16,6 +16,7 @@ import { ContactsComponent } from './contacts/contacts.component';
 import { ContactCardComponent } from './contact-card/contact-card.component';
 
 import { ModalModule } from 'ngx-bootstrap/modal';
+import { ContactsService } from './contacts.service';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,7 @@ import { ModalModule } from 'ngx-bootstrap/modal';
     HttpModule,
     ModalModule.forRoot()
   ],
-  providers: [CustomerService],
+  providers: [CustomerService, ContactsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

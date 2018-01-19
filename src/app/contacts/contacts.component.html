@@ -1,47 +1,48 @@
 <div bsModal #lgModal="bs-modal" class="modal fade">
   <div class="modal-dialog modal-lg">
-  <div class="modal-content">
-    <div class="modal-header">
+    <div class="modal-content">
+      <div class="modal-header">
         <h4 class="modal-title pull-left">Modal</h4>
         <button type="button" class="close pull-right" aria-label="close" (click)="lgModal.hide()">
           <span aria-hidden="true">&times;</span>
         </button>
-    </div>
-    <div class="modal-body">
-        <div class="container" *ngFor="let contact of customer.contacts">
-            <app-contact-card [contact]="contact"></app-contact-card>
-          </div>
-          <!-- INIZIO CARD VUOTA PER INSERIMENTO -->
-          <div class="container">
-            <div class="col-sm-5 col-md-4 col-lg-3 mt-4">
-              <div class="card card-inverse card-info">
+      </div>
+      <div class="modal-body">
+        <div class="container" *ngFor="let contact of contacts">
+          <app-contact-card [contact]="contact"></app-contact-card>
+        </div>
+        <!-- INIZIO CARD VUOTA PER INSERIMENTO -->
+        <div class="container">
+          <div class="col-sm-5 col-md-4 col-lg-3 mt-4">
+            <div class="card card-inverse card-info">
 
-                <div class="card-block">
-                  <div class="card-text">
-                    <label>
-                      Name:
-                      <br>
-                      <input #customerName>
-                      <br> Surname:
-                      <br>
-                      <input #customerSurname>
-                      <br> Birth date:
-                      <br>
-                      <input #customerBirthdate>
-                      <br> Role:
-                      <br>
-                      <input #customerRole>
-                    </label>
-                  </div>
+              <div class="card-block">
+                <div class="card-text">
+                  <label>
+                    Name:
+                    <br>
+                    <input #customerName>
+                    <br> Surname:
+                    <br>
+                    <input #customerSurname>
+                    <br> Birth date:
+                    <br>
+                    <input #customerBirthdate>
+                    <br> Role:
+                    <br>
+                    <input #customerRole>
+                  </label>
                 </div>
-
-                <div class="card-footer">
-                  <button class="btn btn-info float-right btn-sm" (click)="saveContact()">Save</button>
-                </div>
-
               </div>
+
+              <div class="card-footer">
+                <button class="btn btn-info float-right btn-sm" (click)="saveContact()">Save</button>
+              </div>
+
             </div>
           </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>

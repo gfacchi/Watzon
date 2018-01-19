@@ -1,7 +1,10 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { ModalDirective } from 'ngx-bootstrap/modal/modal.directive';
-import { CustomerService } from '../customer.service';
+import { ContactsService } from '../contacts.service';
 import { Contact } from '../contact';
+import { Input } from '@angular/core/src/metadata/directives';
+import { ActivatedRoute} from '@angular/router';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-contacts',
@@ -15,11 +18,14 @@ export class ContactsComponent {
   contacts: Contact[];
 
   constructor(
-    private contactService: CustomerService
+    private route: ActivatedRoute,
+    private contactService: ContactsService,
+    private location: Location
   ) { }
 
   showModal() {
-    this.customerService.getCon().then(contacts => this.contacts = contacts)
+    const id = +this.route.snapshot.paramMap.get('id');
+    this.contactService.getContacts(id).then(contacts => this.contacts = contacts);
     this.lgModal.show();
   }
 }
