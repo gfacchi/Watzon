@@ -26,8 +26,7 @@ export class ProductsComponent implements OnInit, DoCheck {
   }
 
   getProducts(): void {
-    const id = +this.route.snapshot.paramMap.get('id');
-    this.productService.getProducts(id).then(products => this.products = products);
+    this.productService.getProducts().then(products => this.products = products);
   }
 
   ngDoCheck(): void {

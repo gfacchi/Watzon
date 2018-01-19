@@ -5,6 +5,7 @@ import { Subject } from 'rxjs/Subject';
 import { CustomerService } from '../customer.service';
 import { Observable } from 'rxjs/Observable';
 import { debounceTime, distinctUntilChanged, switchMap } from 'rxjs/operators';
+import { ProductService } from '../product.service';
 
 @Component({
   selector: 'app-customer-search',
@@ -13,10 +14,17 @@ import { debounceTime, distinctUntilChanged, switchMap } from 'rxjs/operators';
 })
 export class CustomerSearchComponent implements OnInit {
 
-  constructor(private customerService: CustomerService) { }
+  constructor(
+    private customerService: CustomerService,
+    private productService: ProductService
+  ) { }
 
   search(term: string): void {
     this.customerService.searchCustomers(term);
+  }
+
+  searchProduct(term: string): void {
+    this.productService.getProducts();
   }
 
   ngOnInit() {

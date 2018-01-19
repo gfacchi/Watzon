@@ -1,11 +1,20 @@
 <div id="search-component">
   <label for="search-box">Customer:
-  <input #searchBox id="search-box" (keyup)="search(searchBox.value)" />
-  <ul class="list-group">
+    <input #searchBox id="search-box" (keyup)="search(searchBox.value)" />
+    <ul class="list-group">
       <li *ngFor="let customer of customers$ | async" class="list-group-item" routerLink="/customers/{{customer.id}}">
-          {{customer.name}}
-          <span class="badge">{{customer.city.name}}</span>
+        {{customer.name}}
+        <span class="badge">{{customer.city.name}}</span>
       </li>
     </ul>
   </label>
+  <label for="search-box-product">Product:
+      <input #searchBoxProduct id="search-box-product" (keyup)="searchProduct(searchBoxProduct.value)" />
+      <ul class="list-group">
+        <li *ngFor="let product of products$ | async" class="list-group-item" (click)="searchCustomerByProduct(product)">
+          {{customer.name}}
+          <span class="badge">{{customer.city.name}}</span>
+        </li>
+      </ul>
+    </label>
 </div>

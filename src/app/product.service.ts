@@ -10,7 +10,7 @@ import { of } from 'rxjs/observable/of';
 @Injectable()
 export class ProductService {
 
-  private customersUrl = `http://10.210.5.53:8080/customers`;
+  private productsUrl = `http://10.210.5.53:8080/api`;
 
   constructor(
     private httpClient: HttpClient,
@@ -24,8 +24,23 @@ export class ProductService {
     return headers;
   }
 
-  getProducts(id): Promise<Product[]> {
-    return this.http.get(`${this.customersUrl}/${id}/products `, {headers: ProductService.getHeaders()})
-    .toPromise().then(response => response.json()._embedded.contacts as Product[]);
+  getProducts(): Promise<Product[]> {
+    return this.http.get(`${this.productsUrl}/products?full `, {headers: ProductService.getHeaders()})
+    .toPromise().then(response => response.json() as Product[]);
+  }
+
+  searchProducts(term: string): Promise<Product[]> {
+    if (!term.trim()) {
+      this.getProducts();
+    }
+    return this.http.get(`${this.productsUrl}/search/searchlike?name=${term}`, {headers: CustomerService.getHeaders()})
+      .toPromise().then(response => {
+        this.sharedCustomers = response.json()._embedded.customers as Customer[];
+        return response.json()._embedded.customers as Customer[];
+    }).catch(_ => {
+      console.log(this.alertService.alert);
+      this.alertService.push('404');
+      console.log(this.alertService.alert);
+      return []; });
   }
 }
