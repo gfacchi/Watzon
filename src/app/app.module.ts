@@ -13,6 +13,9 @@ import { HttpModule } from '@angular/http';
 import { ProductsComponent } from './products/products.component';
 import { CustomerSearchComponent } from './customer-search/customer-search.component';
 import { ContactsComponent } from './contacts/contacts.component';
+import { ContactCardComponent } from './contact-card/contact-card.component';
+
+import { ModalModule } from 'ngx-bootstrap/modal';
 
 @NgModule({
   declarations: [
@@ -21,13 +24,15 @@ import { ContactsComponent } from './contacts/contacts.component';
     CustomerDetailComponent,
     ProductsComponent,
     CustomerSearchComponent,
-    ContactsComponent
+    ContactsComponent,
+    ContactCardComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
-    HttpModule
+    HttpModule,
+    ModalModule.forRoot()
   ],
   providers: [CustomerService],
   bootstrap: [AppComponent]

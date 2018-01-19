@@ -1,56 +1,36 @@
-<div id="myModal" class="modal fade" role="dialog">
-  <div class="modal-dialog">
-
-<!-- INIZIO MODAL -->
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4 class="modal-title">Contacts</h4>
-      </div>
-      <div class="modal-body">
-<!-- INIZIO CARD CONTATTI -->
+<div bsModal #lgModal="bs-modal" class="modal fade">
+  <div class="modal-dialog modal-lg">
+  <div class="modal-content">
+    <div class="modal-header">
+        <h4 class="modal-title pull-left">Modal</h4>
+        <button type="button" class="close pull-right" aria-label="close" (click)="lgModal.hide()">
+          <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body">
         <div class="container" *ngFor="let contact of customer.contacts">
-          <div class="col-sm-5 col-md-4 col-lg-3 mt-4">
-            <div class="card card-inverse card-info">
-
-              <div class="card-block">
-                <h4 class="card-title">{{contact.surname}} {{contact.name}}</h4>
-                <div class="card-text">
-                  Birth date: {{contact.birthdate}}
-                  <br> Role: {{contact.role}}
-                </div>
-              </div>
-
-              <div class="card-footer">
-                <button class="btn btn-info float-right btn-sm" (click)="updateContact()">Update</button>
-              </div>
-
-            </div>
+            <app-contact-card [contact]="contact"></app-contact-card>
           </div>
-        </div>
-<!-- INIZIO CARD VUOTA PER INSERIMENTO -->
-        <div class="container">
+          <!-- INIZIO CARD VUOTA PER INSERIMENTO -->
+          <div class="container">
             <div class="col-sm-5 col-md-4 col-lg-3 mt-4">
               <div class="card card-inverse card-info">
 
                 <div class="card-block">
                   <div class="card-text">
                     <label>
-                        Name:
-                        <br>
-                        <input #customerName>
-                        <br>
-                        Surname:
-                        <br>
-                        <input #customerSurname>
-                        <br>
-                        Birth date:
-                        <br>
-                        <input #customerBirthdate>
-                        <br>
-                        Role:
-                        <br>
-                        <input #customerRole>
+                      Name:
+                      <br>
+                      <input #customerName>
+                      <br> Surname:
+                      <br>
+                      <input #customerSurname>
+                      <br> Birth date:
+                      <br>
+                      <input #customerBirthdate>
+                      <br> Role:
+                      <br>
+                      <input #customerRole>
                     </label>
                   </div>
                 </div>
@@ -62,9 +42,6 @@
               </div>
             </div>
           </div>
-
-      </div>
     </div>
   </div>
-
 </div>

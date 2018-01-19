@@ -44,8 +44,9 @@
     </div>
     <div class="row">
       <div class="col-md-4 text-left">
-          <button type="button" class="btn btn-default btn-md" (click)=showModal()>
+          <button type="button" class="btn btn-default btn-md" (click)="contacts.showModal()">
           <span class="glyphicon glyphicon-user"></span> Contacts </button>
+          <app-contacts #contacts></app-contacts>
       </div>
       <div class="col-md-4 text-center">
           <button type="button" class="btn btn-default btn-md" routerLink="/customers/{{customer.id}}/products">
