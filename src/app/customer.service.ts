@@ -10,7 +10,7 @@ import { of } from 'rxjs/observable/of';
 @Injectable()
 export class CustomerService {
 
-  private customersUrl = `http://10.210.5.172:8080/customers`;
+  private customersUrl = `http://10.210.5.53:8080/customers`;
 
   constructor(
     private httpClient: HttpClient,

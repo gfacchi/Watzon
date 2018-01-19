@@ -12,6 +12,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { HttpModule } from '@angular/http';
 import { ProductsComponent } from './products/products.component';
 import { CustomerSearchComponent } from './customer-search/customer-search.component';
+import { ContactsComponent } from './contacts/contacts.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { CustomerSearchComponent } from './customer-search/customer-search.compo
     CustomersComponent,
     CustomerDetailComponent,
     ProductsComponent,
-    CustomerSearchComponent
+    CustomerSearchComponent,
+    ContactsComponent
   ],
   imports: [
     BrowserModule,
