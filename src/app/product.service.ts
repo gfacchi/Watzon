@@ -1,17 +1,16 @@
 import { Injectable } from '@angular/core';
-import { Contact } from './contact';
+import { Product } from './product';
 import { HttpClient } from '@angular/common/http';
 import { Http, Headers } from '@angular/http';
 import { Response } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
-import { Customer } from './customer';
 import 'rxjs/add/operator/toPromise';
 import { of } from 'rxjs/observable/of';
 
 @Injectable()
-export class ContactsService {
+export class ProductService {
 
-  private customersUrl = `http://10.210.5.53:8080/api/customers`;
+  private customersUrl = `http://10.210.5.53:8080/customers`;
 
   constructor(
     private httpClient: HttpClient,
@@ -25,8 +24,8 @@ export class ContactsService {
     return headers;
   }
 
-  getContacts(id): Promise<Contact[]> {
-    return this.http.get(`${this.customersUrl}/${id}/contacts?full `, {headers: ContactsService.getHeaders()})
-    .toPromise().then(response => response.json() as Contact[]);
+  getProducts(id): Promise<Product[]> {
+    return this.http.get(`${this.customersUrl}/${id}/products `, {headers: ProductService.getHeaders()})
+    .toPromise().then(response => response.json()._embedded.contacts as Product[]);
   }
 }

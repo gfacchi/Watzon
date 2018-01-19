@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Customer } from '..//customer';
 import { CustomerService } from '../customer.service';
 import { DoCheck } from '@angular/core/src/metadata/lifecycle_hooks';
+import { AlertService } from '../alert.service';
 
 @Component({
   selector: 'app-customers',
@@ -12,9 +13,11 @@ import { DoCheck } from '@angular/core/src/metadata/lifecycle_hooks';
 export class CustomersComponent implements OnInit, DoCheck {
 
   customers: Customer[];
-  private show: boolean;
 
-  constructor(private customerService: CustomerService) { }
+  constructor(
+    private customerService: CustomerService,
+    private alertService: AlertService
+  ) { }
 
   ngOnInit() {
     this.getCustomers();

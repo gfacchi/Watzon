@@ -6,6 +6,7 @@ import { Observable } from 'rxjs/Observable';
 import { Customer } from './customer';
 import 'rxjs/add/operator/toPromise';
 import { of } from 'rxjs/observable/of';
+import { AlertService } from './alert.service';
 
 @Injectable()
 export class CustomerService {
@@ -14,8 +15,8 @@ export class CustomerService {
 
   constructor(
     private httpClient: HttpClient,
-    private http: Http
-    // messageService
+    private http: Http,
+    private alertService: AlertService
   ) { }
 
   public sharedCustomers: Customer[];
@@ -31,7 +32,11 @@ export class CustomerService {
     .toPromise().then(response => {
       this.sharedCustomers = response.json()._embedded.customers as Customer[];
       return response.json()._embedded.customers as Customer[];
-    });
+    }).catch(_ => {
+      console.log(this.alertService.alert);
+      this.alertService.push('404');
+      console.log(this.alertService.alert);
+      return []; });
   }
 
   getCustomer(id: number): Observable<Customer> {
@@ -47,7 +52,11 @@ export class CustomerService {
       .toPromise().then(response => {
         this.sharedCustomers = response.json()._embedded.customers as Customer[];
         return response.json()._embedded.customers as Customer[];
-    });
+    }).catch(_ => {
+      console.log(this.alertService.alert);
+      this.alertService.push('404');
+      console.log(this.alertService.alert);
+      return []; });
   }
 
 }

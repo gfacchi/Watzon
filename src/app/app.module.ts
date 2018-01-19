@@ -17,6 +17,11 @@ import { ContactCardComponent } from './contact-card/contact-card.component';
 
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { ContactsService } from './contacts.service';
+import { ProductService } from './product.service';
+import { AlertService } from './alert.service';
+
+import { AlertModule } from 'ngx-bootstrap/alert';
+import { AlertComponent } from './alert/alert.component';
 
 @NgModule({
   declarations: [
@@ -26,16 +31,18 @@ import { ContactsService } from './contacts.service';
     ProductsComponent,
     CustomerSearchComponent,
     ContactsComponent,
-    ContactCardComponent
+    ContactCardComponent,
+    AlertComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
     HttpModule,
-    ModalModule.forRoot()
+    ModalModule.forRoot(),
+    AlertModule.forRoot()
   ],
-  providers: [CustomerService, ContactsService],
+  providers: [CustomerService, ContactsService, ProductService, AlertService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
