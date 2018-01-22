@@ -29,18 +29,14 @@ export class ProductService {
     .toPromise().then(response => response.json() as Product[]);
   }
 
-  searchProducts(term: string): Promise<Product[]> {
+  /*searchProducts(term: string): Promise<Product[]> {
     if (!term.trim()) {
       this.getProducts();
     }
     return this.http.get(`${this.productsUrl}/search/searchlike?name=${term}`, {headers: CustomerService.getHeaders()})
       .toPromise().then(response => {
-        this.sharedCustomers = response.json()._embedded.customers as Customer[];
-        return response.json()._embedded.customers as Customer[];
     }).catch(_ => {
-      console.log(this.alertService.alert);
       this.alertService.push('404');
-      console.log(this.alertService.alert);
       return []; });
-  }
+  }*/
 }
